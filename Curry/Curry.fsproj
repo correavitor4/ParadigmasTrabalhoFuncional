@@ -6,7 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Less complex curry.fs" />
+    <Compile Include="program.fs" />
   </ItemGroup>
+
+  <ItemGroup />
 
 </Project>
