@@ -20,22 +20,28 @@ let c = exec h 2
 
 printfn $"\nWhere x==2\n f(x) = {a}\n g(x) = {b}\n h(x) = {c}"
 
-
-//Agora um exemplo com um gráfico a ser plotado
-//É passado uma lista de valores inteiros no intervo 0<=x<=10
-//Em seguida, a função exec é executado 3 vezes, cada um passando uma função diferente e a lista de valores de x, respectivamente
-//O resultado é plotado no gráfico
+//Agora um exemplo com as três funções (f,g,h) sendo executadas com o mesmo domínio:
 
 let xValues = [1..10]
 let fxValues = [for i in xValues -> exec f i]
 let gxValues = [for i in xValues -> exec g i]
 let hxValues = [for i in xValues -> exec h i]
 
-[
-  Chart.Line(xValues, fxValues, Name="f(x) = x² + 2")
-  Chart.Line(xValues, gxValues, Name="g(x) = f(x+1)")
-  Chart.Line(xValues, hxValues, Name="h(x) = -f(x)")
-]
-|> Chart.combine
-|> Chart.withTitle "High Order Functions - three executions of function Exec that receive a function as parameter"
-|> Chart.show
+printf "\n\n"
+
+
+//Printando os valores
+printf("X values: ")
+printfn "%A" xValues
+
+
+printf("f(x) values: ")
+printfn "%A" fxValues
+
+
+printf("g(x) values: ")
+printfn "%A" gxValues
+
+
+printf("h(x) values: ")
+printfn "%A" hxValues

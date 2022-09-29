@@ -6,6 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include=".dockerignore" />
+    <Compile Include="Dockerfile" />
     <Compile Include="program.fs" />
   </ItemGroup>
 
